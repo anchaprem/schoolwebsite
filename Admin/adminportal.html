@@ -226,5 +226,41 @@
   integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <!--  -->
 <script src="adminportal.js"></script>
+   <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCKY646duLPLzs_rI6Y0EhjOcRmTq5pr1c",
+      authDomain: "crestwood-anchaprem.firebaseapp.com",
+      projectId: "crestwood-anchaprem",
+      storageBucket: "crestwood-anchaprem.appspot.com",
+      messagingSenderId: "977773454213",
+      appId: "1:977773454213:web:f63fba2019e6e1b8051aec",
+      measurementId: "G-JSGTNQ6YYP"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    // Get a reference to the Firebase Auth service
+    const auth = getAuth();
+
+    function signout() {
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log("User signed out");
+        // Add any additional actions you want to perform after signout
+      }).catch((error) => {
+        // An error happened.
+        console.error("Sign-out error", error);
+      });
+    }
+  </script>
 
 </html>
